@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Ніч яка місячна"/>
+	<meta property="og:description" content="Заставка за мотивами малюнку Саши Ком'яхова"/>
+	<meta property="og:url" content="http://drafts.ukrzen.in.ua/night.html"/>
+	<meta property="og:image" content="https://scontent-waw1-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12484622_10208307860273589_219978787611773417_o.jpg"/>
+	<meta property="og:image:type" content="image/jpeg"/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="700"/>
+	<meta property="og:site_name" content="Ніч яка місячна"/>
+
+	<meta name="twitter:title" content="Ніч яка місячна"/>
+	<meta name="twitter:description" content="Заставка за мотивами малюнку Саши Ком'яхова."/>
+
+  <style type="text/css">
+	  * { padding: 0; margin: 0; }
+
+	  body, html
+	  {
+		  width: 100%;
+		  height: 100%;
+		  font-family: "PT Sans", Helvetica, Arial, verdana, sans-serif;
+		  font-weight: 700;
+		  color: #ff6;
+		  background-color: #000;
+		  overflow: hidden;
+	  }
+
+	  p#start
+	  {
+		  position: relative;
+		  width: 16em;
+		  font-size: 200%;
+		  font-weight: 400;
+		  margin: 20% auto;
+		  color: #4ee;
+		  opacity: 0;
+		  z-index: 1;
+		  -webkit-animation: intro 2s ease-out;
+		  -moz-animation: intro 2s ease-out;
+		  -ms-animation: intro 2s ease-out;
+		  -o-animation: intro 2s ease-out;
+		  animation: intro 2s ease-out;
+	  }
+
+	  @-webkit-keyframes intro {
+		  0% { opacity: 1; }
+		  90% { opacity: 1; }
+		  100% { opacity: 0; }
+	  }
+
+	  @-moz-keyframes intro {
+		  0% { opacity: 1; }
+		  90% { opacity: 1; }
+		  100% { opacity: 0; }
+	  }
+
+	  @-ms-keyframes intro {
+		  0% { opacity: 1; }
+		  90% { opacity: 1; }
+		  100% { opacity: 0; }
+	  }
+
+	  @-o-keyframes intro {
+		  0% { opacity: 1; }
+		  90% { opacity: 1; }
+		  100% { opacity: 0; }
+	  }
+
+	  @keyframes intro {
+		  0% { opacity: 1; }
+		  90% { opacity: 1; }
+		  100% { opacity: 0; }
+	  }
+
+	  h1
+	  {
+		  position: absolute;
+		  width: 6em;
+		  left: 50%;
+		  top: 25%;
+		  font-size: 10em;
+		  text-align: center;
+		  margin-left: -3em;
+		  line-height: 0.8em;
+		  letter-spacing: -0.05em;
+		  color: #000;
+		  text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+		  opacity: 0;
+		  z-index: 1;
+		  -webkit-animation: logo 5s ease-out 2.5s;
+		  -moz-animation: logo 5s ease-out 2.5s;
+		  -ms-animation: logo 5s ease-out 2.5s;
+		  -o-animation: logo 5s ease-out 2.5s;
+		  animation: logo 5s ease-out 2.5s;
+
+		  display:block;
+	  }
+
+	  h1 sub
+	  {
+		  display: block;
+		  font-size: 0.3em;
+		  letter-spacing: 0;
+		  line-height: 0.8em;
+	  }
+
+	  @-webkit-keyframes logo {
+		  0% { -webkit-transform: scale(1); opacity: 1; }
+		  50% { opacity: 1; }
+		  100% { -webkit-transform: scale(0.1); opacity: 0; }
+	  }
+
+	  @-moz-keyframes logo {
+		  0% { -moz-transform: scale(1); opacity: 1; }
+		  50% { opacity: 1; }
+		  100% { -moz-transform: scale(0.1); opacity: 0; }
+	  }
+
+	  @-ms-keyframes logo {
+		  0% { -ms-transform: scale(1); opacity: 1; }
+		  50% { opacity: 1; }
+		  100% { -ms-transform: scale(0.1); opacity: 0; }
+	  }
+
+	  @-o-keyframes logo {
+		  0% { -o-transform: scale(1); opacity: 1; }
+		  50% { opacity: 1; }
+		  100% { -o-transform: scale(0.1); opacity: 0; }
+	  }
+
+	  @keyframes logo {
+		  0% { transform: scale(1); opacity: 1; }
+		  50% { opacity: 1; }
+		  100% { transform: scale(0.1); opacity: 0; }
+	  }
+
+	  /* the interesting 3D scrolling stuff */
+	  #titles
+	  {
+		  position: absolute;
+		  width: 18em;
+		  height: 50em;
+		  bottom: 0;
+		  left: 50%;
+		  margin-left: -9em;
+		  font-size: 350%;
+		  text-align: justify;
+		  overflow: hidden;
+		  -webkit-transform-origin: 50% 100%;
+		  -moz-transform-origin: 50% 100%;
+		  -ms-transform-origin: 50% 100%;
+		  -o-transform-origin: 50% 100%;
+		  transform-origin: 50% 100%;
+		  -webkit-transform: perspective(300px) rotateX(25deg);
+		  -moz-transform: perspective(300px) rotateX(25deg);
+		  -ms-transform: perspective(300px) rotateX(25deg);
+		  -o-transform: perspective(300px) rotateX(25deg);
+		  transform: perspective(300px) rotateX(25deg);
+	  }
+
+	  #titles:after
+	  {
+		  position: absolute;
+		  content: ' ';
+		  left: 0;
+		  right: 0;
+		  top: 0;
+		  bottom: 60%;
+		  background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+		  background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+		  background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+		  background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+		  background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+		  pointer-events: none;
+	  }
+
+	  #titles p
+	  {
+		  text-align: justify;
+		  margin: 0.8em 0;
+	  }
+
+	  #titles p.center
+	  {
+		  text-align: center;
+	  }
+	  #titles
+	  {
+		  text-align:justify;
+	  }
+	  #titles a
+	  {
+		  color: #ff6;
+		  text-decoration: underline;
+	  }
+
+	  #titlecontent
+	  {
+		  position: absolute;
+		  top: 100%;
+		  -webkit-animation: scroll 100s linear 4s infinite;
+		  -moz-animation: scroll 100s linear 4s infinite;
+		  -ms-animation: scroll 100s linear 4s infinite;
+		  -o-animation: scroll 100s linear 4s infinite;
+		  animation: scroll 100s linear 4s infinite;
+	  }
+
+	  /* animation */
+	  @-webkit-keyframes scroll {
+		  0% { top: 100%; }
+		  100% { top: -170%; }
+	  }
+
+	  @-moz-keyframes scroll {
+		  0% { top: 100%; }
+		  100% { top: -170%; }
+	  }
+
+	  @-ms-keyframes scroll {
+		  0% { top: 100%; }
+		  100% { top: -170%; }
+	  }
+
+	  @-o-keyframes scroll {
+		  0% { top: 100%; }
+		  100% { top: -170%; }
+	  }
+
+	  @keyframes scroll {
+		  0% { top: 100%; }
+		  100% { top: -170%; }
+	  }
+
+	  iframe
+	  {
+		  position:absolute;
+		  left:-10000px;
+	  }
+  </style>
+
+  <title>Ніч яка місяна by ukrzen</title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+
+}//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+
+<p id="start">Ніч яка місячна&hellip;</p>
+
+<h1>ЗОРЯНА ЯСНАЯ</h1>
+
+<div id="titles"><div id="titlecontent">
+
+
+
+	<p>&#1042;&#1080;&#1076;&#1085;&#1086;, &#1093;&#1086;&#1095; &#1075;&#1086;&#1083;&#1082;&#1080; &#1079;&#1073;&#1080;&#1088;&#1072;&#1081;.<br />
+		&#1042;&#1080;&#1081;&#1076;&#1080;, &#1082;&#1086;&#1093;&#1072;&#1085;&#1072;&#1103;, &#1087;&#1088;&#1072;&#1094;&#1077;&#1102; &#1079;&#1084;&#1086;&#1088;&#1077;&#1085;&#1072;,<br />
+		&#1061;&#1086;&#1095; &#1085;&#1072; &#1093;&#1074;&#1080;&#1083;&#1080;&#1085;&#1086;&#1095;&#1082;&#1091; &#1074; &#1075;&#1072;&#1081;.</p>
+
+	<p>&#1057;&#1103;&#1076;&#1077;&#1084; &#1091;&#1082;&#1091;&#1087;&#1086;&#1095;&#1094;&#1110; &#1090;&#1091;&#1090; &#1087;&#1110;&#1076; &#1082;&#1072;&#1083;&#1080;&#1085;&#1086;&#1102; &ndash;<br />
+		&#1030; &#1085;&#1072;&#1076; &#1087;&#1072;&#1085;&#1072;&#1084;&#1080; &#1103; &#1087;&#1072;&#1085;!<br />
+		&#1043;&#1083;&#1103;&#1085;&#1100;, &#1084;&#1086;&#1103; &#1088;&#1080;&#1073;&#1086;&#1085;&#1100;&#1082;&#1086;, &ndash; &#1089;&#1088;&#1110;&#1073;&#1085;&#1086;&#1102; &#1093;&#1074;&#1080;&#1083;&#1077;&#1102;<br />
+		&#1057;&#1090;&#1077;&#1083;&#1080;&#1090;&#1100;&#1089;&#1103; &#1087;&#1086;&#1083;&#1077;&#1084; &#1090;&#1091;&#1084;&#1072;&#1085;.</p>
+
+	<p>&#1043;&#1072;&#1081; &#1095;&#1072;&#1088;&#1110;&#1074;&#1085;&#1080;&#1081;, &#1085;&#1110;&#1073;&#1080; &#1087;&#1088;&#1086;&#1084;&#1077;&#1085;&#1077;&#1084; &#1074;&#1089;&#1080;&#1087;&#1072;&#1085;&#1080;&#1081;,<br />
+		&#1063;&#1080; &#1079;&#1072;&#1075;&#1072;&#1076;&#1072;&#1074;&#1089;&#1103;, &#1095;&#1080; &#1089;&#1087;&#1080;&#1090;&#1100;:<br />
+		&#1043;&#1077;&#1085; &#1085;&#1072; &#1089;&#1090;&#1088;&#1091;&#1085;&#1082;&#1110;&#1081; &#1090;&#1072; &#1074;&#1080;&#1089;&#1086;&#1082;&#1110;&#1081; &#1086;&#1089;&#1080;&#1095;&#1080;&#1085;&#1110;<br />
+		&#1051;&#1080;&#1089;&#1090;&#1103; &#1087;&#1077;&#1089;&#1090;&#1083;&#1080;&#1074;&#1086; &#1090;&#1088;&#1077;&#1084;&#1090;&#1080;&#1090;&#1100;.</p>
+
+	<p>&#1053;&#1077;&#1073;&#1086; &#1085;&#1077;&#1079;&#1084;&#1110;&#1088;&#1103;&#1085;&#1077; &#1074;&#1089;&#1080;&#1087;&#1072;&#1085;&#1077; &#1079;&#1086;&#1088;&#1103;&#1084;&#1080;,<br />
+		&#1065;&#1086; &#1090;&#1086; &#1079;&#1072; &#1041;&#1086;&#1078;&#1072; &#1082;&#1088;&#1072;&#1089;&#1072;!<br />
+		&#1055;&#1077;&#1088;&#1083;&#1072;&#1084;&#1080; &#1103;&#1089;&#1085;&#1080;&#1084;&#1080; &#1087;&#1086;&#1087;&#1110;&#1076; &#1090;&#1086;&#1087;&#1086;&#1083;&#1103;&#1084;&#1080;<br />
+		&#1043;&#1088;&#1072;&#1108; &#1082;&#1088;&#1072;&#1087;&#1083;&#1080;&#1089;&#1090;&#1072; &#1088;&#1086;&#1089;&#1072;.</p>
+
+	<p>&#1058;&#1080; &#1085;&#1077; &#1083;&#1103;&#1082;&#1072;&#1081;&#1089;&#1103;, &#1097;&#1086; &#1085;&#1110;&#1078;&#1077;&#1085;&#1100;&#1082;&#1080; &#1073;&#1086;&#1089;&#1110;&#1111;<br />
+		&#1042;&#1084;&#1086;&#1095;&#1080;&#1096; &#1074; &#1093;&#1086;&#1083;&#1086;&#1076;&#1085;&#1091; &#1088;&#1086;&#1089;&#1091;:<br />
+		&#1071; &#1090;&#1077;&#1073;&#1077;, &#1074;&#1110;&#1088;&#1085;&#1072;&#1103;, &#1072;&#1078; &#1076;&#1086; &#1093;&#1072;&#1090;&#1080;&#1085;&#1086;&#1085;&#1100;&#1082;&#1080;<br />
+		&#1057;&#1072;&#1084; &#1085;&#1072; &#1088;&#1091;&#1082;&#1072;&#1093; &#1086;&#1076;&#1085;&#1077;&#1089;&#1091;.</p>
+
+	<p>&#1058;&#1080; &#1085;&#1077; &#1083;&#1103;&#1082;&#1072;&#1081;&#1089;&#1103;, &#1097;&#1086; &#1079;&#1084;&#1077;&#1088;&#1079;&#1085;&#1077;&#1096;, &#1083;&#1077;&#1073;&#1077;&#1076;&#1086;&#1085;&#1100;&#1082;&#1086;,<br />
+		&#1058;&#1077;&#1087;&#1083;&#1086; &ndash; &#1085;&#1110; &#1074;&#1110;&#1090;&#1088;&#1091;, &#1085;&#1110; &#1093;&#1084;&#1072;&#1088;...<br />
+		&#1071; &#1087;&#1088;&#1080;&#1075;&#1086;&#1088;&#1085;&#1091; &#1090;&#1077;&#1073;&#1077; &#1076;&#1086; &#1089;&#1074;&#1086;&#1075;&#1086; &#1089;&#1077;&#1088;&#1076;&#1077;&#1085;&#1100;&#1082;&#1072;,<br />
+		&#1040; &#1074;&#1086;&#1085;&#1086; &#1087;&#1072;&#1083;&#1082;&#1077;, &#1103;&#1082; &#1078;&#1072;&#1088;.</p>
+	<p>
+		Ідея: Сашко Ком'яхов
+	</p>
+
+
+
+	<p>
+		Ukrzen Team
+	</p>
+	<p class="center">Зроблено на основі:<a href="http://www.sitepoint.com/css3-starwars-scrolling-text/">sitepoint.com/<br />css3-starwars-scrolling-text/</a>
+	</p>
+</div></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_D0ZQPqeJkk?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+  
+</body>
+
+</html>
+
+
