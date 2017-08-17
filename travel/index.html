@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="Keywords" content="подорожі, опитування">
+    <meta name="description" content="Куди Ви хотіли поїхати? ">
+    <meta property="og:title" content="Подорожі. Результати опитування"/>
+    <meta property="og:description" content="Куди хочуть поїхати? Які держави найбільше відвідали? Уся статистика тут."/>
+    <meta property="og:url" content="http://drafts.ukrzen.in.ua/travel/"/>
+    <!--<meta property="og:type" content="site:site" />-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://drafts.ukrzen.in.ua/travel/fb.jpg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+    <script src="https://www.amcharts.com/lib/3/lang-maps/uk.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="api/data.js"></script>
+    <script src="assets/charts.js"></script>
+    <link href="./assets/styles.css" rel="stylesheet">
+</head>
+<body>
+<!-- HTML -->
+<header class="iceland"></header>
+<section class="want-countries orange">
+    <h1>Які держави хотіли б відвідати?</h1>
+    <div id="wants-to-visit-countries" style="width: 100vw; height:120vh"></div>
+
+</section>
+<header class="iceland2 ">
+    <div>
+        <h1 style="max-height:10vh">Топ-10 держав, які хотіли б відвідати</h1>
+        <div id="wants-to-visit-countries-chart" style="width: 50vw; height:80vh; "></div>
+
+    </div>
+</header>
+<section class="visited-countries blue">
+    <h1>Які держави відвідали?</h1>
+    <div id="visited-countries" style="width: 100vw; height:120vh"></div>
+
+</section>
+<header class="poland ">
+    <div>
+        <h1>Топ-10 відвіданих держав</h1>
+        <div id="visited-countries-chart" style="width: 50vw; height:80vh; "></div>
+    </div>
+</header>
+<section class="green">
+    <h1>Що подобається в подорожах?</h1>
+    <div class="svgWrapper">
+        <svg width="960" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g></g>
+            <g transform="translate(480,300)">
+                <text text-anchor="middle" transform="translate(220,-52)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);"></text>
+                <text text-anchor="middle" transform="translate(-102,-103)rotate(0)"
+                      style="font-size: 100px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    КУЛЬТУРА
+                </text>
+                <text text-anchor="middle" transform="translate(52,-28)rotate(0)"
+                      style="font-size: 100px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(156, 158, 222);">
+                    ЛЮДИ
+                </text>
+                <text text-anchor="middle" transform="translate(-108,10)rotate(59.99999999999999)"
+                      style="font-size: 94px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">
+                    КУХНЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-35,-178)rotate(0)"
+                      style="font-size: 70px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    ПРИРОДА
+                </text>
+                <text text-anchor="middle" transform="translate(-2,115)rotate(-59.99999999999999)"
+                      style="font-size: 57px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 109, 49);">
+                    ВСЕ
+                </text>
+                <text text-anchor="middle" transform="translate(-166,41)rotate(-59.99999999999999)"
+                      style="font-size: 46px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    СВОБОДА
+                </text>
+                <text text-anchor="middle" transform="translate(308,51)rotate(-29.999999999999993)"
+                      style="font-size: 46px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    ДОРОГА
+                </text>
+                <text text-anchor="middle" transform="translate(61,52)rotate(0)"
+                      style="font-size: 46px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    МОРЕ
+                </text>
+                <text text-anchor="middle" transform="translate(-143,94)rotate(-59.99999999999999)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    МИСТЕЦТВО
+                </text>
+                <text text-anchor="middle" transform="translate(-84,140)rotate(59.99999999999999)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    СВІТЛИНИ
+                </text>
+                <text text-anchor="middle" transform="translate(211,148)rotate(-59.99999999999999)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(123, 65, 115);">
+                    ГОРИ
+                </text>
+                <text text-anchor="middle" transform="translate(-246,159)rotate(-59.99999999999999)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    ВІДПОЧИНОК
+                </text>
+                <text text-anchor="middle" transform="translate(300,95)rotate(-29.999999999999993)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">
+                    ЗАТИШОК
+                </text>
+                <text text-anchor="middle" transform="translate(282,-47)rotate(-29.999999999999993)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    КОМПАНІЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-135,136)rotate(-59.99999999999999)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    ПРИГОДИ
+                </text>
+                <text text-anchor="middle" transform="translate(33,188)rotate(-29.999999999999993)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    ТРАДИЦІЇ
+                </text>
+                <text text-anchor="middle" transform="translate(-14,27)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    КОЛОРИТ
+                </text>
+                <text text-anchor="middle" transform="translate(293,128)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    ПЕРЕЛЬОТИ
+                </text>
+                <text text-anchor="middle" transform="translate(-102,144)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    ТРЕКІНГ
+                </text>
+                <text text-anchor="middle" transform="translate(35,-9)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    ПІЗНАННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(153,157)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    ПИТИ
+                </text>
+                <text text-anchor="middle" transform="translate(12,-13)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    ЦІКАВІСТЬ
+                </text>
+                <text text-anchor="middle" transform="translate(-19,-17)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 109, 189);">
+                    КОМФОРТ
+                </text>
+                <text text-anchor="middle" transform="translate(173,119)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">
+                    ЗАМКИ
+                </text>
+                <text text-anchor="middle" transform="translate(203,31)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    НАТХНЕННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-272,-120)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    ДОСВІД
+                </text>
+                <text text-anchor="middle" transform="translate(-98,46)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    ДЖЕТЛАГ
+                </text>
+                <text text-anchor="middle" transform="translate(70,-110)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 109, 49);">
+                    ФУТБОЛ
+                </text>
+                <text text-anchor="middle" transform="translate(93,2)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(189, 158, 57);">
+                    ПОРІВНЯННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(39,-49)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    СПОРТ
+                </text>
+                <text text-anchor="middle" transform="translate(-308,49)rotate(-59.99999999999999)"
+                      style="font-size: 86px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    НОВИЗНА
+                </text>
+                <text text-anchor="middle" transform="translate(317,-1)rotate(-29.999999999999993)"
+                      style="font-size: 70px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    КРАЄВИД
+                </text>
+                <text text-anchor="middle" transform="translate(194,-190)rotate(-59.99999999999999)"
+                      style="font-size: 46px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    СПІЛКУВАННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-100,-232)rotate(0)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    АВАНТЮРИЗМ
+                </text>
+                <text text-anchor="middle" transform="translate(249,-76)rotate(-59.99999999999999)"
+                      style="font-size: 92px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    ВРАЖЕННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-241,77)rotate(-59.99999999999999)"
+                      style="font-size: 89px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    АРХІТЕКТУРА
+                </text>
+                <text text-anchor="middle" transform="translate(-319,-74)rotate(-59.99999999999999)"
+                      style="font-size: 65px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    ЗНАЙОМСТВА
+                </text>
+                <text text-anchor="middle" transform="translate(133,103)rotate(0)"
+                      style="font-size: 52px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(123, 65, 115);">
+                    АТМОСФЕРА
+                </text>
+                <text text-anchor="middle" transform="translate(90,141)rotate(0)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">
+                    САМОТНІСТЬ
+                </text>
+                <text text-anchor="middle" transform="translate(-134,227)rotate(0)"
+                      style="font-size: 39px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(165, 81, 148);">
+                    ЗМІНА ОТОЧЕННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(334,-110)rotate(0)"
+                      style="font-size: 28px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 109, 189);">
+                    ВИД З ВІКНА
+                </text>
+                <text text-anchor="middle" transform="translate(292,113)rotate(-30)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">
+                    РОЗШИРЕННЯ СВІТОБАЧЕННЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-426,54)rotate(30)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    ВІДКЛЮЧЕННЯ МОЗКУ
+                </text>
+                <text text-anchor="middle" transform="translate(29,13)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(82, 84, 163);">
+                    НІЧНІ ПРОГУЛЯНКИ
+                </text>
+                <text text-anchor="middle" transform="translate(103,171)rotate(-30)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    МАЛОЛЮДНІ МІСЦЯ
+                </text>
+                <text text-anchor="middle" transform="translate(-167,69)rotate(-60)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(156, 158, 222);">
+                    КУЛЬТУРНИЙ ШОК
+                </text>
+            </g>
+        </svg>
+    </div>
+</section>
+<header class="spain ">
+    <div>
+        <h1>Скільки держав Ви відвідали?<br>
+            <small>(в середньому, за віком)</small>
+        </h1>
+        <div id="average-countries"></div>
+    </div>
+</header>
+<section class="violet">
+    <h1>Чим Ви займаєтесь?</h1>
+    <div class="svgWrapper">
+        <svg width="960" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g></g>
+            <g transform="translate(480,300)scale(1,1)">
+                <text text-anchor="middle" transform="translate(2,66)rotate(29.999999999999993)"
+                      style="font-size: 98px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(156, 158, 222);">
+                    СТУДЕНТ
+                </text>
+                <text text-anchor="middle" transform="translate(99,-28)rotate(59.99999999999999)"
+                      style="font-size: 69px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">
+                    МЕНЕДЖЕР
+                </text>
+                <text text-anchor="middle" transform="translate(126,172)rotate(0)"
+                      style="font-size: 69px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    ЖУРНАЛІСТ
+                </text>
+                <text text-anchor="middle" transform="translate(228,-105)rotate(-59.99999999999999)"
+                      style="font-size: 59px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    ІНЖЕНЕР
+                </text>
+                <text text-anchor="middle" transform="translate(50,2)rotate(0)"
+                      style="font-size: 59px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    ІТ
+                </text>
+                <text text-anchor="middle" transform="translate(-198,88)rotate(59.99999999999999)"
+                      style="font-size: 64px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 109, 49);">
+                    ВИКЛАДАЧ
+                </text>
+                <text text-anchor="middle" transform="translate(-30,-85)rotate(59.99999999999999)"
+                      style="font-size: 59px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(189, 158, 57);">
+                    ЮРИСТ
+                </text>
+                <text text-anchor="middle" transform="translate(-293,126)rotate(-29.999999999999993)"
+                      style="font-size: 52px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    ДИЗАЙНЕР
+                </text>
+                <text text-anchor="middle" transform="translate(81,-163)rotate(29.999999999999993)"
+                      style="font-size: 52px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    ФРІЛАНСЕР
+                </text>
+                <text text-anchor="middle" transform="translate(-258,177)rotate(-29.999999999999993)"
+                      style="font-size: 59px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    ФІЛОЛОГ
+                </text>
+                <text text-anchor="middle" transform="translate(286,69)rotate(29.999999999999993)"
+                      style="font-size: 52px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    МАРКЕТОЛОГ
+                </text>
+                <text text-anchor="middle" transform="translate(310,-25)rotate(0)"
+                      style="font-size: 43px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    ТЕСТУВАЛЬНИК
+                </text>
+                <text text-anchor="middle" transform="translate(-68,-91)rotate(-59.99999999999999)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(165, 81, 148);">
+                    БЛОГЕР
+                </text>
+                <text text-anchor="middle" transform="translate(-115,-140)rotate(-59.99999999999999)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 109, 189);">
+                    ЛІКАР
+                </text>
+                <text text-anchor="middle" transform="translate(-117,-58)rotate(59.99999999999999)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">-
+                </text>
+                <text text-anchor="middle" transform="translate(-158,209)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    ФОТОГРАФ
+                </text>
+                <text text-anchor="middle" transform="translate(411,34)rotate(-59.99999999999999)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(82, 84, 163);">
+                    АНАЛІТИК
+                </text>
+                <text text-anchor="middle" transform="translate(-234,213)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    СОЦІАЛЬНИЙ ПРАЦІВНИК
+                </text>
+                <text text-anchor="middle" transform="translate(-269,22)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(156, 158, 222);">
+                    ВЧИТЕЛЬ
+                </text>
+                <text text-anchor="middle" transform="translate(-14,-149)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">---
+                </text>
+                <text text-anchor="middle" transform="translate(-38,94)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    ПОМІЧНИК КЕРІВНИКА
+                </text>
+                <text text-anchor="middle" transform="translate(-83,213)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    МОЛОДІЖНИЙ ПРАЦІВНИК
+                </text>
+                <text text-anchor="middle" transform="translate(163,117)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    МАЙСТЕР МАНІКЮРУ
+                </text>
+                <text text-anchor="middle" transform="translate(-56,59)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(189, 158, 57);">
+                    ФІЗИК
+                </text>
+                <text text-anchor="middle" transform="translate(-74,46)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    ПОЛІТОЛОГ
+                </text>
+                <text text-anchor="middle" transform="translate(252,-108)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    БУХГАЛТЕР
+                </text>
+                <text text-anchor="middle" transform="translate(80,11)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    ХУДОЖНИК
+                </text>
+                <text text-anchor="middle" transform="translate(20,-142)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    ВОЛОНТЕР
+                </text>
+                <text text-anchor="middle" transform="translate(-47,-57)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    ВЧИТЕЛЬ МУЗИКИ
+                </text>
+                <text text-anchor="middle" transform="translate(243,52)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    БЛОГГЕР
+                </text>
+                <text text-anchor="middle" transform="translate(-126,-57)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(123, 65, 115);">
+                    КУР'ЄР
+                </text>
+                <text text-anchor="middle" transform="translate(123,-123)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(165, 81, 148);">
+                    ДЕРЖАВНИЙ ПРАЦІВНИК
+                </text>
+                <text text-anchor="middle" transform="translate(-246,27)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 109, 189);">
+                    РЕКРУТЕР
+                </text>
+                <text text-anchor="middle" transform="translate(105,30)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">
+                    НАУКОВЕЦЬ
+                </text>
+                <text text-anchor="middle" transform="translate(148,-87)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    РЕДАКТОР
+                </text>
+                <text text-anchor="middle" transform="translate(113,97)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(82, 84, 163);">
+                    МЕНЕДЖЕР ІБ
+                </text>
+                <text text-anchor="middle" transform="translate(-237,-134)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    МЕДІА
+                </text>
+                <text text-anchor="middle" transform="translate(-130,-91)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(156, 158, 222);">
+                    АДМІНІСТРАТОР
+                </text>
+                <text text-anchor="middle" transform="translate(135,-78)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">
+                    КОНСАЛТИНГ
+                </text>
+                <text text-anchor="middle" transform="translate(13,-57)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    СЕЙЛЗ
+                </text>
+                <text text-anchor="middle" transform="translate(24,102)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    МАРКЕТИНГ
+                </text>
+                <text text-anchor="middle" transform="translate(155,-174)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    ДЕРЖАВНИЙ СЛУЖБОВЕЦЬ
+                </text>
+                <text text-anchor="middle" transform="translate(77,-42)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 109, 49);">
+                    РЕПЕТИТОР
+                </text>
+                <text text-anchor="middle" transform="translate(76,-9)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(189, 158, 57);">
+                    ДИЗАЙН
+                </text>
+                <text text-anchor="middle" transform="translate(-83,3)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    МЕДИК
+                </text>
+                <text text-anchor="middle" transform="translate(269,-127)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 203, 148);">
+                    ІСТОРИК
+                </text>
+                <text text-anchor="middle" transform="translate(-30,82)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    АРТ-МЕНЕДЖЕР
+                </text>
+                <text text-anchor="middle" transform="translate(74,206)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    ГРОМАДСЬКИЙ ДІЯЧ
+                </text>
+                <text text-anchor="middle" transform="translate(268,-3)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(214, 97, 107);">
+                    ГЕОДОНІСТ
+                </text>
+                <text text-anchor="middle" transform="translate(-52,-95)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 150, 156);">
+                    PR
+                </text>
+                <text text-anchor="middle" transform="translate(-42,170)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(123, 65, 115);">
+                    РЕСТОРАТОР
+                </text>
+                <text text-anchor="middle" transform="translate(11,-22)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(165, 81, 148);">
+                    КАДРОВИК
+                </text>
+                <text text-anchor="middle" transform="translate(-191,164)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 109, 189);">
+                    СУПЕРВАЙЗЕР
+                </text>
+                <text text-anchor="middle" transform="translate(-234,107)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(222, 158, 214);">
+                    ПІДПРИЄМЕЦЬ
+                </text>
+                <text text-anchor="middle" transform="translate(-268,-2)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(57, 59, 121);">
+                    ПЕРУКАР
+                </text>
+                <text text-anchor="middle" transform="translate(-277,-108)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(82, 84, 163);">
+                    ЕКОНОМІСТ
+                </text>
+                <text text-anchor="middle" transform="translate(34,195)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    БУДІВЕЛЬНИК
+                </text>
+                <text text-anchor="middle" transform="translate(-2,-145)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(99, 121, 57);">
+                    АСПІРАНТ
+                </text>
+                <text text-anchor="middle" transform="translate(163,93)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 162, 82);">
+                    КОСМЕТОЛОГ
+                </text>
+                <text text-anchor="middle" transform="translate(130,-40)rotate(59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(181, 207, 107);">
+                    SEO
+                </text>
+                <text text-anchor="middle" transform="translate(44,-102)rotate(-59.99999999999999)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(206, 219, 156);">
+                    БІОЛОГ
+                </text>
+                <text text-anchor="middle" transform="translate(-211,81)rotate(0)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(140, 109, 49);">
+                    АКТОР
+                </text>
+                <text text-anchor="middle" transform="translate(40,-71)rotate(29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(189, 158, 57);">
+                    МАНДРІВНИК
+                </text>
+                <text text-anchor="middle" transform="translate(188,-20)rotate(-29.999999999999993)"
+                      style="font-size: 10px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(231, 186, 82);">
+                    МУЗИКАНТ
+                </text>
+                <text text-anchor="middle" transform="translate(334,-114)rotate(-29.999999999999993)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(132, 60, 57);">
+                    МЕНЕДЖЕР ПРОЕКТІВ
+                </text>
+                <text text-anchor="middle" transform="translate(-289,10)rotate(-59.99999999999999)"
+                      style="font-size: 52px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    ПЕРЕКЛАДАЧ
+                </text>
+                <text text-anchor="middle" transform="translate(-165,39)rotate(60)"
+                      style="font-size: 100px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(107, 110, 207);">
+                    ПРОГРАМІСТ
+                </text>
+                <text text-anchor="middle" transform="translate(291,125)rotate(30)"
+                      style="font-size: 31px; font-family: &quot;Open Sans Condensed&quot;; fill: rgb(173, 73, 74);">
+                    ДОМОГОСПОДАРКА
+                </text>
+            </g>
+        </svg>
+    </div>
+</section>
+<header class="travel">
+
+</header>
+</body>
+</html>

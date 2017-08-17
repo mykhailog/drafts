@@ -1,0 +1,98 @@
+
+h1 {
+
+    color:white;
+    padding:0.4em;
+    font-size: 2em;
+    text-transform: uppercase;
+    max-height:10vh;
+    -webkit-margin-before:0px;
+    -webkit-margin-after:0px;
+}
+section.orange h1 {
+    color: rgba(230, 85, 13, 0.77);
+}
+section.blue  h1 {
+    color: rgb(103, 183, 220);
+}
+section.violet h1 {
+    color: rgb(107, 110, 207);
+}
+section.green h1 {
+    color: rgb(181, 207, 107);
+}
+header > div
+{
+    width: 100vw;
+    height:100vh;
+    position: absolute;
+
+    overflow: hidden;
+    background: rgba(0,0,0,0.29);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.29);
+    color:white;
+
+}
+header > div > div
+{
+    display: inline-block;
+}
+header
+{
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+}
+header.iceland
+{
+    background-image: url('./header.jpg?7');
+    height:85vh;
+}
+header.iceland2
+{
+    background-image: url('./iceland3.jpg');
+}
+header.poland
+{
+    background-image: url('./polska.jpg');
+}
+header.spain
+{
+    background-image: url('./spain.jpg');
+}
+header.travel
+{
+    background-image: url('./lilu.jpg');
+}
+
+body {
+    font-family: 'Open Sans Condensed', sans-serif !important;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+h2 {
+    text-align: center;
+}
+section
+{
+    margin: 0px;
+    padding: 0em;
+}
+.want-countries{
+    background-color: rgba(254, 230, 206, 0.1);
+}
+.visited-countries{
+    background-color: rgba(207, 230, 252,0.1);
+}
+[title='JavaScript charts'] {
+    right:0 !important;
+    left: auto !important;
+    top:0 !important;
+
+}
+#average-countries {
+    width: 50vw; height:80vh;
+}
