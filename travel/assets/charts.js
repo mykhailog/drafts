@@ -150,7 +150,7 @@ AmCharts.makeChart("visited-countries-chart", {
     "categoryAxis": {
         "gridPosition": "start",
         "labelRotation": 45
-    },
+    }
 
 
 });
@@ -170,6 +170,7 @@ AmCharts.makeChart("average-countries", {
         gridColor: "#ffffff",
         gridAlpha: 0.2,
         axisColor: "#ffffff",
+
     }],
     "startDuration": 1,
     "graphs": [{
@@ -226,6 +227,9 @@ AmCharts.makeChart("visited-countries-chart", {
         gridColor: "#ffffff",
         gridAlpha: 0.2,
         axisColor: "#ffffff",
+    labelFunction: function(number, label, axis) {
+            return number + "%";
+    }
     }],
     "startDuration": 1,
     "graphs": [{
@@ -280,7 +284,11 @@ AmCharts.makeChart("wants-to-visit-countries-chart", {
         gridColor: "#ffffff",
         gridAlpha: 0.2,
         axisColor: "#ffffff",
+    labelFunction: function(number, label, axis) {
+        return number + "%";
+    }
     }],
+
     "startDuration": 1,
     "graphs": [{
 
