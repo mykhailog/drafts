@@ -66,7 +66,9 @@ header.travel
 {
     background-image: url('./lilu.jpg');
 }
-
+header {
+    min-height:900px;
+}
 body {
     font-family: 'Open Sans Condensed', sans-serif !important;
     text-align: center;
@@ -80,6 +82,7 @@ section
 {
     margin: 0px;
     padding: 0em;
+
 }
 .want-countries{
     background-color: rgba(254, 230, 206, 0.1);
