@@ -7,7 +7,7 @@ AmCharts.makeChart("wants-to-visit-countries", {
     "numberFormatter": {precision: 0, decimalSeparator: '.', thousandsSeparator: ','},
 
     "dataProvider": {
-        "map": "worldHigh",
+        "map": "worldLow",
         "zoomLevel": 1.2,
         "zoomLongitude": 10,
         "zoomLatitude": 52,
@@ -57,7 +57,7 @@ AmCharts.makeChart("visited-countries", {
     "numberFormatter": {precision: 0, decimalSeparator: '.', thousandsSeparator: ','},
 
     "dataProvider": {
-        "map": "worldHigh",
+        "map": "worldLow",
         "zoomLevel": 1.2,
         "zoomLongitude": 10,
         "zoomLatitude": 52,
@@ -118,7 +118,7 @@ AmCharts.makeChart("visited-countries-chart", {
         return {
             id: country.id,
             title: AmCharts.mapTranslations.uk[
-                AmCharts.maps.worldHigh.svg.g.path.find((it) => country.id === it.id).title
+                AmCharts.maps.worldLow.svg.g.path.find((it) => country.id === it.id).title
                 ],
             value: country.value
         }
@@ -210,7 +210,7 @@ AmCharts.makeChart("visited-countries-chart", {
         return {
             id: country.id,
             title: AmCharts.mapTranslations.uk[
-                AmCharts.maps.worldHigh.svg.g.path.find((it) => country.id === it.id).title
+                AmCharts.maps.worldLow.svg.g.path.find((it) => country.id === it.id).title
                 ],
             value: country.value.toFixed(0)
         }
@@ -265,7 +265,7 @@ AmCharts.makeChart("wants-to-visit-countries-chart", {
         return {
             id: country.id,
             title: AmCharts.mapTranslations.uk[
-                AmCharts.maps.worldHigh.svg.g.path.find((it) => country.id === it.id).title
+                AmCharts.maps.worldLow.svg.g.path.find((it) => country.id === it.id).title
                 ],
             value: country.value
         }

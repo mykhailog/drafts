@@ -67,7 +67,7 @@ header.travel
     background-image: url('./lilu.jpg');
 }
 header {
-    min-height:900px;
+    min-height:600px;
 }
 body {
     font-family: 'Open Sans Condensed', sans-serif !important;
