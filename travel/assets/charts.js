@@ -1,3 +1,4 @@
+var fontSize = (window.innerWidth > window.innerHeight ? window.innerWidth : window.innerHeight) / 50.0;
 AmCharts.makeChart("wants-to-visit-countries", {
     "type": "map",
     "theme": "light",
@@ -112,7 +113,7 @@ AmCharts.makeChart("visited-countries", {
 AmCharts.makeChart("visited-countries-chart", {
     "type": "serial",
     "theme": "none",
-    "marginRight": 70,
+    // "marginRight": 70,
     fontFamily: "Open Sans Condensed",
     "dataProvider": visitedCountries.slice(0, 10).map((country) => {
         return {
@@ -157,7 +158,7 @@ AmCharts.makeChart("average-countries", {
     "type": "serial",
     "theme": "none",
 
-    "marginRight": 70,
+    // "marginRight": 70,
     fontFamily: "Open Sans Condensed",
     "dataProvider": ageRates,
     "valueAxes": [{
@@ -192,7 +193,7 @@ AmCharts.makeChart("average-countries", {
         "gridPosition": "start",
         axisColor: "#ffffff",
         color: "#ffffff",
-        fontSize: 20,
+        fontSize: fontSize,
         gridColor: "#ffffff",
         gridAlpha: 0.2,
         title: "Вік"
@@ -203,7 +204,7 @@ AmCharts.makeChart("average-countries", {
 AmCharts.makeChart("visited-countries-chart", {
     "type": "serial",
     "theme": "light",
-    "marginRight": 70,
+    // "marginRight": 70,
     fontFamily: "Open Sans Condensed",
     "rotate": true,
     "dataProvider": visitedCountries.slice(0, 10).map((country) => {
@@ -213,7 +214,7 @@ AmCharts.makeChart("visited-countries-chart", {
                 AmCharts.maps.worldLow.svg.g.path.find((it) => country.id === it.id).title
                 ],
             value: country.value.toFixed(0)
-        }
+        };
     }),
     color: "#0e7ae6",
     "valueAxes": [{
@@ -247,7 +248,7 @@ AmCharts.makeChart("visited-countries-chart", {
         "gridPosition": "start",
         axisColor: "#ffffff",
         color: "#ffffff",
-        fontSize: 20,
+        fontSize: fontSize,
         gridColor: "#ffffff",
         gridAlpha: 0.2
     },
@@ -258,7 +259,7 @@ AmCharts.makeChart("wants-to-visit-countries-chart", {
     "type": "serial",
     "theme": "none",
     "rotate": true,
-    "marginRight": 70,
+    // "marginRight": 70,
     "numberFormatter": {precision: 0, decimalSeparator: '.', thousandsSeparator: ','},
     fontFamily: "Open Sans Condensed",
     "dataProvider": wantsToVisitCountries.slice(0, 10).map((country) => {
@@ -300,7 +301,7 @@ AmCharts.makeChart("wants-to-visit-countries-chart", {
         "gridPosition": "start",
         axisColor: "#ffffff",
         color: "#ffffff",
-        fontSize: 20,
+        fontSize: fontSize,
         gridColor: "#ffffff",
         gridAlpha: 0.2
     },

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <meta name="Keywords" content="подорожі, опитування">
     <meta name="description" content="Куди Ви хотіли поїхати? ">
     <meta property="og:title" content="Подорожі. Результати опитування"/>
-    <meta property="og:description" content="Куди хочуть поїхати? Які держави найбільше відвідали? Уся статистика тут."/>
+    <meta property="og:description"
+          content="Куди хочуть поїхати? Які держави найбільше відвідали? Уся статистика тут."/>
     <meta property="og:url" content="http://drafts.ukrzen.in.ua/travel/"/>
     <!--<meta property="og:type" content="site:site" />-->
     <meta property="og:type" content="website"/>
@@ -22,7 +23,7 @@
     <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
     <script src="https://www.amcharts.com/lib/3/lang-maps/uk.js"></script>
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <script src="api/data.js"></script>
     <script src="assets/charts.js"></script>
@@ -33,25 +34,25 @@
 <header class="iceland"></header>
 <section class="want-countries orange">
     <h1>Які держави хотіли б відвідати?</h1>
-    <div id="wants-to-visit-countries" style="width: 100vw; height:120vh"></div>
+    <div id="wants-to-visit-countries" class="map"></div>
 
 </section>
 <header class="iceland2 ">
     <div>
         <h1 style="max-height:10vh">Топ-10 держав, які хотіли б відвідати</h1>
-        <div id="wants-to-visit-countries-chart" style="width: 50vw; height:80vh; "></div>
+        <div id="wants-to-visit-countries-chart" class="chart"></div>
 
     </div>
 </header>
 <section class="visited-countries blue">
     <h1>Які держави відвідали?</h1>
-    <div id="visited-countries" style="width: 100vw; height:120vh"></div>
+    <div id="visited-countries" class="map"></div>
 
 </section>
 <header class="poland ">
     <div>
         <h1>Топ-10 відвіданих держав</h1>
-        <div id="visited-countries-chart" style="width: 50vw; height:80vh; "></div>
+        <div id="visited-countries-chart" class="chart"></div>
     </div>
 </header>
 <section class="green">
@@ -255,7 +256,7 @@
         <h1>Скільки держав Ви відвідали?<br>
             <small>(в середньому, за віком)</small>
         </h1>
-        <div id="average-countries"></div>
+        <div id="average-countries" class="chart"></div>
     </div>
 </header>
 <section class="violet">
