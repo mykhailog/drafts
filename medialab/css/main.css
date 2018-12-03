@@ -1,0 +1,106 @@
+body {
+    margin:0px;
+    padding:0px;
+
+    font-size: 14px;
+    color: #141414;
+    background-color: #fff;
+    -webkit-tap-highlight-color: rgba(15, 15, 15, 0.36);
+}
+* {
+    box-sizing:border-box;
+    font-family: "PT Serif", sans-serif;
+
+}
+.content {
+    width:100vw;
+    height:100vh;
+
+    margin-top: 1em;
+    text-align: center;
+}
+.content label {
+    font-size:1.5rem;
+    font-weight: 400;
+}
+.content input {
+    margin-top: 0.8em;
+    display: inline-block;
+    width:100%;
+    max-width:400px;
+    height:2.5rem;
+    border: none;
+    background: #f7f7f7;
+    padding: 5px 7.5px!important;
+    font-size:1.0rem;
+    line-height:1rem;
+    border-radius:2px;
+    outline: none;
+}
+.quote {
+
+}
+.content:not(.answered) .result {
+    display: none;
+}
+.content.answered form{
+    display: none;
+
+}
+
+.content .text {
+    font-family: "PT Serif", sans-serif;
+    font-style: italic;
+    text-align: left;
+    margin-top:1em;
+    line-height: 1.6875;
+    letter-spacing: 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #424242;
+    border-top:1px dotted gray;
+
+    padding:1em;
+    padding-bottom:0;
+}
+.content .result .source,.content .result .generate {
+    opacity: 0;
+    transition: 0.5s ease-out opacity;
+}
+.content .result.finished .source ,.content .result.finished .generate {
+    opacity: 1;
+    transition: 0.5s ease-in opacity;
+}
+.content .result .source:hover {
+    text-decoration: underline;
+}
+.content .result .source {
+    font-style: italic;
+
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 100;
+    padding:1rem;
+    paddint-top:0;
+    color: #B5B5B5;
+    text-decoration:none;
+}
+.content .generate:active {
+    background-color: #303030;
+}
+.content .generate {
+
+    margin-top: 0.8em;
+    max-width:400px;
+    background-color:#1b76bd;
+    width:100%;
+    height:3rem;
+    line-height:2rem;
+    outline:none;
+    padding:4px;
+    border:none;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+}
