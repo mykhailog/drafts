@@ -6,6 +6,7 @@ body {
     color: #141414;
     background-color: #fff;
     -webkit-tap-highlight-color: rgba(15, 15, 15, 0.36);
+    text-align: center;
 }
 * {
     box-sizing:border-box;
@@ -15,7 +16,8 @@ body {
 .content {
     width:100vw;
     height:100vh;
-
+    max-width:587px;
+    display: inline-block;
     margin-top: 1em;
     text-align: center;
 }
